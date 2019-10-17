@@ -15,9 +15,9 @@ class Login extends Component {
     this.state = {
       form: {
         username: '',
-        key: ''
+        key: '',
       },
-      error: ''
+      error: '',
     }
     // Bind functions
     this.handleChange = this.handleChange.bind(this);
@@ -32,9 +32,9 @@ class Login extends Component {
     this.setState({
       form: {
         ...form,
-        [name]: value
+        [name]: value,
       },
-      error: ''
+      error: '',
     });
   }
 
