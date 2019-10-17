@@ -16,8 +16,8 @@ class Login extends Component {
       form: {
         username: '',
         key: '',
-        error: '',
       },
+      error: '',
     }
     // Bind functions
     this.handleChange = this.handleChange.bind(this);
@@ -33,8 +33,8 @@ class Login extends Component {
       form: {
         ...form,
         [name]: value,
-        error: '',
       },
+      error: '',
     });
   }
 
