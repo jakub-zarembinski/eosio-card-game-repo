@@ -5,7 +5,7 @@ import { Button } from 'components';
 class PlayerProfile extends Component {
   render() {
     // Extract data and event functions from props
-    const { name, winCount, lostCount, onStartGame } = this.props;
+    const { name, winCount, lostCount, onLogout, onStartGame } = this.props;
 
     // Display welcome message,
     //         buttons for login / start game,
@@ -26,6 +26,7 @@ class PlayerProfile extends Component {
           <span>Lost <span className="count">{ lostCount }</span></span>
         </div>
         <div className="buttons">
+          <Button onClick={ onLogout } className="red">LOGOUT</Button>
           <Button onClick={ onStartGame } className="green">START</Button>
         </div>
       </div>

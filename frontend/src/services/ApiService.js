@@ -65,6 +65,11 @@ class ApiService {
     });
   }
 
+  static logout() {
+    localStorage.removeItem("cardgame_account");
+    localStorage.removeItem("cardgame_key");
+  }
+
   static async getUserByName(username) {
     try {
       const rpc = new JsonRpc(process.env.REACT_APP_EOS_HTTP_ENDPOINT);

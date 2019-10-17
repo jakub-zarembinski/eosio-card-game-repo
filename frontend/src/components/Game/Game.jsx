@@ -14,6 +14,7 @@ class Game extends Component {
     super(props);
     // Bind functions
     this.loadUser = this.loadUser.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
     // Call `loadUser` before mounting the app
     this.loadUser();
   }
@@ -33,6 +34,12 @@ class Game extends Component {
     });
   }
 
+  handleLogout() {
+    const { setUser } = this.props;
+    ApiService.logout();
+    setUser({ name: "" });
+  }
+
   render() {
     // Extract data from user data of `UserReducer` from redux
     const { user: { name, win_count, lost_count } } = this.props;
@@ -43,6 +50,7 @@ class Game extends Component {
           name={ name }
           winCount={ win_count }
           lostCount={ lost_count }
+          onLogout={ this.handleLogout }
         />
       </section>
     )
